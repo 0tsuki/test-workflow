@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: Display diff
         run: |
-          ${{ needs.check.outputs.diff }}
+          echo "Diff output: ${{ needs.check.outputs.diff }}"
 
   build_frontend:
     runs-on: ubuntu-latest
