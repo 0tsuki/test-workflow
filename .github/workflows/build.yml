@@ -41,6 +41,13 @@ jobs:
           else
             echo "diff=" >> $GITHUB_OUTPUT
           fi
+  display_diff:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - name: Display diff
+        run: |
+          echo ${{ needs.check.outputs.diff }}
 
   build_frontend:
     runs-on: ubuntu-latest
