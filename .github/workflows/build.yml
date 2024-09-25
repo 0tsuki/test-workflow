@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - ".github/workflows/**"
       - "frontend/**"
       - "backend/**"
 
@@ -22,7 +23,9 @@ jobs:
           fetch-depth: 0
       - id: frontend
         run: |
-          git diff --quiet ${{ github.event.before }} ${{ github.event.after}} ./frontend
+          git diff --quiet ${{ github.event.before }} ${{ github.event.after}} \
+            ./.github/workflows/build.yml \
+            ./frontend
           if [[ $? -eq 1 ]]; then
             echo "diff=frontend" >> $GITHUB_OUTPUT
           else
@@ -30,7 +33,9 @@ jobs:
           fi
       - id: backend
         run: |
-          git diff --quiet ${{ github.event.before }} ${{ github.event.after}} ./backend
+          git diff --quiet ${{ github.event.before }} ${{ github.event.after}} \
+            ./.github/workflows/build.yml \
+            ./backend
           if [[ $? -eq 1 ]]; then
             echo "diff=backend" >> $GITHUB_OUTPUT
           else
