@@ -15,7 +15,7 @@ jobs:
       run:
         shell: bash {0}
     outputs:
-      diff: ${{ steps.*.outputs.diff }}
+      diff: ${{ toJSON(steps.*.outputs.diff) }}
     steps:
       - uses: actions/checkout@v4
         with:
