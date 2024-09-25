@@ -25,7 +25,8 @@ jobs:
         run: |
           git diff --quiet ${{ github.event.before }} ${{ github.event.after}} \
             ./.github/workflows/build.yml \
-            ./frontend
+            ./frontend \
+            ':(exclude)frontend/eslint.config.js'
           if [[ $? -eq 1 ]]; then
             echo "diff=frontend" >> $GITHUB_OUTPUT
           else
