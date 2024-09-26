@@ -3,4 +3,5 @@ export default {
   rules: {
     "no-console": "off",
   },
+  ignorePatterns: ["node_modules/**", "dist/**", "build/**", "coverage/**"],
 };
