@@ -1,0 +1,7 @@
+frontend:
+  - "frontend/**"
+  - "!frontend/eslint.config.js"
+  - "!frontend/docs/**"
+  - "!frontend/.*"
+backend:
+  - "backend/**"

@@ -28,14 +28,7 @@ jobs:
         id: filter
         with:
           predicate-quantifier: "every"
-          filters: |
-            frontend:
-              - 'frontend/**'
-              - '!frontend/eslint.config.js'
-              - '!frontend/docs/**'
-              - '!frontend/.*'
-            backend:
-              - 'backend/**'
+          filters: .github/filters.yml
 
   display_outputs:
     runs-on: ubuntu-latest
