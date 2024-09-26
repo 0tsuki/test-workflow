@@ -27,7 +27,8 @@ jobs:
             .github/workflows/build.yml \
             frontend \
             ':(exclude)frontend/eslint.config.js' \
-            ':(exclude)frontend/docs/**'
+            ':(exclude)frontend/docs/**' \
+            ':(exclude)frontend/.*'
           if [[ $? -eq 1 ]]; then
             echo "diff=frontend" >> $GITHUB_OUTPUT
           else
