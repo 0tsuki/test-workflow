@@ -22,7 +22,7 @@ jobs:
       backend: ${{ steps.filter.outputs.backend }}
     steps:
       - uses: actions/checkout@v4
-      - uses: dony/paths-filter@v3
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           predicate-quantifier: "every"
